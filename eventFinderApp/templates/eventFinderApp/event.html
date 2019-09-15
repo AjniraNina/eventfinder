@@ -6,6 +6,13 @@
 
 <p>{{ event.location }}</p>
 <p>Starts at: {{ event.start_time }}</p>
+<p>Venue: {{ event.venue }}</p>
+<p>Categories: </p>
+
+    {% for cat in event.categories.all %}
+        <p>{{ cat.name }}</p>
+        {% endfor %}
+
 <p>Ends at: {{ event.end_time }}</p>
 
 {% endblock %}
