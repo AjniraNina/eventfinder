@@ -1,5 +1,4 @@
 """eventFinderProject URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
@@ -15,9 +14,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
 
 urlpatterns = [
     path('event-finder/', include('eventFinderApp.urls')),
     path('admin/', admin.site.urls),
     path('users/', include('django.contrib.auth.urls')),
+    #path('users/', include('users.urls')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

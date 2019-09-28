@@ -1,13 +1,16 @@
 from django.db import models
+from django.forms import ModelForm
+from django.conf import settings
 
 
 class Event(models.Model):
     title = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
+    venue = models.CharField(max_length=200)
     start_time = models.DateTimeField('start time and date')
     end_time = models.DateTimeField('end time and date')
-    venue = models.CharField (max_length = 200, default = '')
-    categories = models.ManyToManyField ('Category', related_name='events')
+    categories = models.ManyToManyField("Category", related_name = 'events')
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

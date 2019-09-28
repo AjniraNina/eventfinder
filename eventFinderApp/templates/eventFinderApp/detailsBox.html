@@ -1,11 +1,9 @@
 <div class="details-box">
     <a href="{% url 'eventFinderApp:event' event.id %}">
         <p>{{ event.title }}</p>
-        <div>
-            {% for cat in event.categories.all %}
-            <p>{{ cat.name }}</p>
-            {% endfor %}
-        </div>
         <p>{{ event.start_time }}</p>
+        {% for category in event.categories.all %}
+            <p>{{ category.name }}</p>
+        {% endfor %}
     </a>
 </div>
