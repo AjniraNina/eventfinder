@@ -49,8 +49,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'rest_framework',
-    'rest_framework.authtoken',
     'debug_toolbar',
+    'rest_framework.authtoken',
+
 ]
 AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -67,10 +68,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'eventFinderProject.urls'
 
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [(os.path.join(BASE_DIR, 'templates')),],            # <------- THIS LINE HAS BEEN UPDATED
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
