@@ -53,6 +53,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
@@ -141,13 +148,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
-# STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+#STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),) #was commented out
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 LOGIN_REDIRECT_URL = 'eventFinderApp:index'
 LOGOUT_REDIRECT_URL = 'eventFinderApp:index'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
-    ]
-}
