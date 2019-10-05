@@ -1,3 +1,4 @@
+
 html {
     font-family: 'Manjari', sans-serif;
 }
@@ -7,8 +8,9 @@ body {
 }
 
 h1 {
+    font-family: 'Francois One', sans-serif;
     font-size: 3rem;
-    color: #ff006f;
+    color: #fab700;
     margin: 0;
 }
 
@@ -29,14 +31,14 @@ nav a {
 }
 
 a {
-    color: #ff006f;
+    color: #ce587ff8;
 }
 
 #new-event {
     width: 100%;
-    background-color: #ff006f;
+    background-color: #e7a843;
     color: #fff;
-    border: 1px solid #ff006f;
+    border: 1px solid #DAF7A6;
     border-radius: 5px;
     font-size: 1.5rem;
     height: 50px;
@@ -48,7 +50,7 @@ a {
 }
 
 .details-box {
-    border: 1px solid #ff006f;
+    border: 1px solid #FF5733;
     border-radius: 5px;
     margin: 10px 0;
     padding: 10px;
@@ -64,3 +66,4 @@ a {
 .details-box a:hover {
     text-decoration: underline;
 }
+@import url('https://fonts.googleapis.com/css?family=Francois+One&display=swap');

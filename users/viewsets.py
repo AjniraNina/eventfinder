@@ -6,7 +6,7 @@ from .serializers import CustomUserSerializer
 
 class CustomUserViewSet(viewsets.ModelViewSet):
     queryset = CustomUser.objects.all()
-    permission_classes = (IsAuthenticated,) #swapped the spots
+    permission_classes = (IsAuthenticated,) #swapped the spots it should go below
     serializer_class = CustomUserSerializer
 
     def get_queryset(self):
